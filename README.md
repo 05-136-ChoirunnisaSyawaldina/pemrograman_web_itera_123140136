@@ -1,10 +1,10 @@
-# 🎓 Task Quest Management
+#  Task Quest Management
 
 **Task Quest Management** adalah aplikasi web manajemen tugas yang dirancang khusus untuk mahasiswa. Dengan antarmuka yang ceria bertema pink dan efek *glassmorphism* yang modern, aplikasi ini membantu mengelola aktivitas akademik menjadi lebih mudah, visual, dan efisien.
 
 Aplikasi ini dibangun menggunakan HTML, Tailwind CSS, dan JavaScript murni, serta memanfaatkan `localStorage` untuk menyimpan semua data tugas langsung di browser pengguna.
 
-## 📸 Screenshot Aplikasi
+## Screenshot Aplikasi
 
 Berikut adalah beberapa tangkapan layar yang menunjukkan fitur-fitur utama dari aplikasi.
 
@@ -19,7 +19,7 @@ Berikut adalah beberapa tangkapan layar yang menunjukkan fitur-fitur utama dari 
 
 -----
 
-## 🚀 Cara Menjalankan Aplikasi
+##  Cara Menjalankan Aplikasi
 
 1.  **Unduh File**: Unduh file `index.html` dan `script.js` dari repository ini.
 2.  **Simpan di Folder yang Sama**: Pastikan kedua file tersebut berada dalam satu direktori (folder) yang sama.
@@ -28,7 +28,7 @@ Berikut adalah beberapa tangkapan layar yang menunjukkan fitur-fitur utama dari 
 
 -----
 
-## ✨ Daftar Fitur yang Telah Diimplementasikan
+##  Daftar Fitur yang Telah Diimplementasikan
 
   - [x] **Fungsionalitas CRUD Penuh**:
       - **Create**: Menambahkan tugas baru melalui form.
@@ -49,7 +49,7 @@ Berikut adalah beberapa tangkapan layar yang menunjukkan fitur-fitur utama dari 
 
 -----
 
-## 🛠️ Penjelasan Teknis
+##  Penjelasan Teknis
 
 ### 1\. Penggunaan `localStorage`
 
