@@ -2,10 +2,10 @@
 
 Ini adalah proyek *dashboard* personal sederhana yang dibuat dengan HTML, CSS, dan JavaScript modern (ES6+). Aplikasi ini dirancang sebagai halaman awal yang fungsional dan estetis, menampilkan informasi penting secara *real-time* dengan tema *glassmorphism* dan gradasi warna pink-ungu.
 
-## 📸 Screenshot Aplikasi<br>
+## Screenshot Aplikasi<br>
 <img width="892" height="867" alt="image" src="https://github.com/user-attachments/assets/cf049fba-cc6a-414f-90ba-b84cc55ae306" />
 
-## 🚀 Fungsi & Fitur
+## Fungsi & Fitur
 
 Aplikasi ini memiliki beberapa fitur utama untuk membantu Anda tetap terorganisir:
 
@@ -21,7 +21,7 @@ Aplikasi ini memiliki beberapa fitur utama untuk membantu Anda tetap terorganisi
 
 ---
 
-## ✨ Fitur ES6+ yang Diimplementasikan
+##  Fitur ES6+ yang Diimplementasikan
 
 Proyek ini ditulis menggunakan sintaks JavaScript modern (ES6 dan yang lebih baru) untuk kode yang lebih bersih, terstruktur, dan efisien.
 
