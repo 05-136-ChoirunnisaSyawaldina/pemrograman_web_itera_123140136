@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Aplikasi Manajemen Buku Pribadi (MyBookApp)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplikasi ini adalah submission untuk Tugas Praktikum Pemrograman Web. Ini adalah aplikasi React (Single Page Application) yang memungkinkan pengguna untuk mencatat dan mengelola koleksi buku pribadi mereka dengan antarmuka yang modern.
 
-## Available Scripts
+Aplikasi ini dibangun menggunakan `create-react-app` dan memanfaatkan konsep React modern seperti Hooks, Context API, dan React Router untuk manajemen state dan navigasi yang efisien.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Screenshot Antarmuka
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[TAMPILKAN SCREENSHOT INTERMUKA UTAMA ANDA DI SINI]
+*(Ganti baris ini dengan screenshot aplikasi Anda, seperti yang Anda kirimkan sebelumnya)*
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[TAMPILKAN SCREENSHOT HALAMAN STATISTIK DI SINI]
+*(Ganti baris ini dengan screenshot halaman /stats)*
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Fitur Utama
 
-### `npm run build`
+* **Manajemen Buku (CRUD):** Pengguna dapat **Menambah** buku baru, **Mengedit** detail buku yang ada, dan **Menghapus** buku dari koleksi.
+* **Filter Status:** Buku dapat difilter secara instan berdasarkan statusnya: "All", "Milik", "Baca", atau "Beli".
+* **Pencarian Cepat:** Pengguna dapat mencari buku secara *real-time* berdasarkan judul atau penulis.
+* **Penyimpanan Lokal:** Data buku akan tetap tersimpan di browser (menggunakan `localStorage`) bahkan setelah browser ditutup, berkat *custom hook* `useLocalStorage`.
+* **Halaman Statistik:** Halaman terpisah (`/stats`) yang menunjukkan ringkasan jumlah buku berdasarkan status, dihitung menggunakan *custom hook* `useBookStats`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Instruksi Instalasi dan Menjalankan
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Anda memerlukan [Node.js](https://nodejs.org/) (v18 atau lebih baru) dan `npm` terinstal di komputer Anda.
 
-### `npm run eject`
+1.  **Clone atau Unduh Proyek**
+    (Jika ini proyek Git, clone repositori. Jika tidak, cukup ekstrak file ZIP).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2.  **Masuk ke Folder Proyek**
+    ```sh
+    cd manajemen-buku-choi
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3.  **Instal Dependencies**
+    Buka terminal di folder proyek dan jalankan:
+    ```sh
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4.  **Menjalankan Aplikasi (Mode Development)**
+    Setelah instalasi selesai, jalankan:
+    ```sh
+    npm start
+    ```
+    Aplikasi akan otomatis terbuka di browser Anda pada alamat `http://localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5.  **Menjalankan Tes (Testing)**
+    Untuk menjalankan tes unit, jalankan:
+    ```sh
+    npm test
+    ```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Penjelasan Fitur React yang Digunakan
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Aplikasi ini dibangun sepenuhnya menggunakan **Functional Components** dengan **React Hooks**.
 
-### Code Splitting
+* **`useState`**: Digunakan untuk mengelola *state* lokal di dalam komponen.
+    * **Contoh:** Di `BookForm.jsx` (untuk mengelola input `title`, `author`, `status`) dan di `Home.jsx` (untuk mengelola `filter`, `searchTerm`, dan buku yang sedang diedit).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* **`useEffect`**: Digunakan untuk *side effects* (efek samping).
+    * **Contoh:** Di `useLocalStorage.js` (untuk menyinkronkan *state* ke `localStorage` setiap kali nilai *state* berubah) dan di `BookForm.jsx` (untuk mengisi *field* form secara otomatis ketika `bookToEdit` (props) berubah).
 
-### Analyzing the Bundle Size
+* **React Router (`react-router-dom`)**: Digunakan untuk membuat aplikasi menjadi Single Page Application (SPA) dengan navigasi multi-halaman.
+    * **Contoh:** Di `App.js`, `<Router>`, `<Routes>`, dan `<Route>` digunakan untuk mengatur rute halaman `/` (Home) dan `/stats` (Statistik).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* **Context API (`createContext`, `useContext`)**: Digunakan untuk *state management* global, menghindari "prop drilling".
+    * **Contoh:** `BookContext.js` membuat `BookProvider` yang menyimpan *state* global (`books`) dan fungsi (`addBook`, `deleteBook`, `updateBook`). Komponen lain seperti `Home.jsx` dan `BookItem.jsx` menggunakan *custom hook* `useBooks()` untuk mengakses *state* tersebut.
 
-### Making a Progressive Web App
+* **Custom Hooks**: Dua *custom hooks* dibuat untuk mengekstrak logika yang bisa dipakai ulang.
+    * `useLocalStorage.js`: Sebuah *hook* yang menggabungkan `useState` dan `useEffect` untuk secara otomatis menyimpan *state* apapun ke `localStorage`.
+    * `useBookStats.js`: Sebuah *hook* yang menerima *array* `books` dan menggunakan `useMemo` untuk menghitung statistik (total, milik, baca, beli) secara efisien.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Laporan Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Tes unit ditulis menggunakan **Jest** dan **React Testing Library** untuk memastikan komponen dan logika bisnis berjalan sesuai harapan.
 
-### Deployment
+* Tes mencakup rendering komponen, simulasi interaksi pengguna (input form dan klik tombol), dan validasi logika *custom hook*.
+* Semua tes berhasil dijalankan (PASS) setelah memperbaiki *missing dependency* dan *mocking module*.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Hasil Tes:**
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[TAMPILKAN SCREENSHOT TERMINAL DARI HASIL `npm test` YANG SUKSES DI SINI]
+*(Ganti baris ini dengan screenshot terminal Anda yang menunjukkan "Test Suites: X passed, X total")*

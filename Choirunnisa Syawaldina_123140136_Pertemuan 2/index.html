@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <header class="mb-8 text-center fade-in-up">
+            <div class="float inline-block">
+                <div class="text-6xl mb-4"></div>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-3 tracking-tight">
+                My Dashboard
+            </h1>
+            <p class="text-white opacity-80 text-lg">Stay organized</p>
+        </header>
+
+        <!-- Info Cards Row -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <!-- Time Card -->
+            <div class="glass rounded-3xl p-6 text-white hover-lift fade-in-up" style="animation-delay: 0.1s;">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="text-4xl">⏰</div>
+                    <div class="text-xs px-3 py-1 rounded-full" style="background: rgba(255, 255, 255, 0.2);">Live</div>
+                </div>
+                <h3 class="text-sm font-medium mb-2" style="color: rgba(255, 255, 255, 0.7);">Current Time</h3>
+                <p id="currentTime" class="text-4xl font-bold mb-1">--:--:--</p>
+                <p id="currentDate" class="text-sm" style="color: rgba(255, 255, 255, 0.6);">-- --- ----</p>
+            </div>
+
+            <!-- Weather Card -->
+            <div class="glass rounded-3xl p-6 text-white hover-lift fade-in-up" style="animation-delay: 0.2s;">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="text-4xl">🌤️</div>
+                    <div id="weatherStatus" class="text-xs px-3 py-1 rounded-full loading" style="background: rgba(255, 255, 255, 0.2);">Loading</div>
+                </div>
+                <h3 class="text-sm font-medium mb-2" style="color: rgba(255, 255, 255, 0.7);">Weather</h3>
+                <p id="weatherInfo" class="text-4xl font-bold mb-1">--°C</p>
+                <p id="weatherLocation" class="text-sm" style="color: rgba(255, 255, 255, 0.6);">Bandar Lampung</p>
+            </div>
+        </div>
+
+        <!-- Notes Section -->
+        <div class="glass rounded-3xl p-8 hover-lift fade-in-up" style="animation-delay: 0.3s;">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-1">📝 My Notes</h2>
+                    <p class="text-sm" style="color: rgba(255, 255, 255, 0.6);">Turn your thoughts into something meaningful</p>
+                </div>
+                <div class="text-white text-sm px-4 py-2 rounded-full" style="background: rgba(255, 255, 255, 0.2);">
+                    Total: <span id="totalNotes" class="font-bold">0</span>
+                </div>
+            </div>
+            
+            <!-- Add Note Form -->
+            <div class="mb-6 space-y-3">
+                <input 
+                    type="text" 
+                    id="noteTitle" 
+                    placeholder="Note title..." 
+                    class="w-full px-5 py-4 glass-dark text-white rounded-2xl transition-all duration-300"
+                    style="border: 1px solid rgba(255, 255, 255, 0.1);"
+                >
+                <textarea 
+                    id="noteContent" 
+                    placeholder="Start writing your thoughts...." 
+                    rows="4"
+                    class="w-full px-5 py-4 glass-dark text-white rounded-2xl resize-none transition-all duration-300"
+                    style="border: 1px solid rgba(255, 255, 255, 0.1);"
+                ></textarea>
+                <button 
+                    id="addNoteBtn" 
+                    class="w-full px-6 py-4 text-white rounded-2xl font-semibold btn-glow transition-all duration-300"
+                    style="background: linear-gradient(to right, #ec4899, #d946ef);"
+                >
+                    Create Note
+                </button>
+            </div>
+
+            <!-- Notes List -->
+            <div id="notesList" class="space-y-3 max-h-96 overflow-y-auto pr-2">
+                <div class="text-center py-12" style="color: rgba(255, 255, 255, 0.5);">
+                    <div class="text-6xl mb-4 float">📝</div>
+                    <p class="text-lg">No notes yet</p>
+                    <p class="text-sm mt-2">Create your first beautiful note!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 text-sm fade-in-up" style="color: rgba(255, 255, 255, 0.6); animation-delay: 0.4s;">
+            <p class="mt-1">© 2025 Personal Dashboard</p>
+        </footer>
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script type="module" src="app.js"></script>
+    
+    <!-- Hide loading screen -->
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').classList.add('hidden');
+            }, 500);
+        });
+    </script>
+</body>
+</html>
