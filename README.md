@@ -8,11 +8,10 @@ Aplikasi ini dibangun menggunakan `create-react-app` dan memanfaatkan konsep Rea
 
 ## Screenshot Antarmuka
 
-[TAMPILKAN SCREENSHOT INTERMUKA UTAMA ANDA DI SINI]
-*(Ganti baris ini dengan screenshot aplikasi Anda, seperti yang Anda kirimkan sebelumnya)*
+<br><img width="733" height="952" alt="image" src="https://github.com/user-attachments/assets/00e7822a-a0ce-47bb-a678-917c182fde39" />
 
-[TAMPILKAN SCREENSHOT HALAMAN STATISTIK DI SINI]
-*(Ganti baris ini dengan screenshot halaman /stats)*
+
+<br><img width="731" height="352" alt="image" src="https://github.com/user-attachments/assets/67d5e1a1-939c-414f-8f99-5c6c89652d4b" />
 
 ---
 
@@ -90,5 +89,4 @@ Tes unit ditulis menggunakan **Jest** dan **React Testing Library** untuk memast
 
 **Hasil Tes:**
 
-[TAMPILKAN SCREENSHOT TERMINAL DARI HASIL `npm test` YANG SUKSES DI SINI]
-*(Ganti baris ini dengan screenshot terminal Anda yang menunjukkan "Test Suites: X passed, X total")*
+<br><img width="1403" height="657" alt="Screenshot 2025-11-01 110709" src="https://github.com/user-attachments/assets/70e36430-72e0-475c-95d2-ebdbc3f10aac" />
