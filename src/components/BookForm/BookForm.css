@@ -1,0 +1,23 @@
+.book-form {
+  margin-bottom: 2rem;
+}
+
+.book-form h3 {
+  margin-top: 0;
+  color: #5e3370;
+}
+
+.form-error {
+  color: #c0392b;
+  background-color: #fdd;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.cancel-btn {
+  background-color: #7f8c8d; /* Abu-abu */
+  margin-left: 0.5rem;
+}
+.cancel-btn:hover {
+  background-color: #95a5a6;
+}

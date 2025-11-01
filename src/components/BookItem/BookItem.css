@@ -1,0 +1,38 @@
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Agar responsif di layar kecil */
+  gap: 1rem;
+}
+
+.book-info h3 {
+  margin: 0 0 0.25rem 0;
+  color: #5e3370;
+}
+.book-info p {
+  margin: 0;
+  font-style: italic;
+  color: #444;
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+}
+.status-milik { background-color: #2980b9; /* Biru */ }
+.status-baca { background-color: #27ae60; /* Hijau */ }
+.status-beli { background-color: #f39c12; /* Kuning */ }
+
+.book-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-btn { background-color: #16a085; /* Hijau Tosca */ }
+.edit-btn:hover { background-color: #1abc9c; }
+.delete-btn { background-color: #c0392b; /* Merah */ }
+.delete-btn:hover { background-color: #e74c3c; }
